@@ -1,0 +1,24 @@
+<div class="container background">
+	<div class=row"">
+		<div class="col-10">
+			<h1>loading....</h1>
+			<h1 id="timer"></h1>
+		</div>
+		<div class="col-2">
+		</div>	
+	</div>
+</div>
+<script>
+	var timerHandle = document.getElementById('timer');
+	var p = document.getElementById('p');
+	var count = 5;
+	var m = setInterval(function()
+		{ 
+			timerHandle.innerHTML = count--;
+			if(count < 0){
+				clearInterval(m);
+				location.href = "<%=@url.url%>";
+			}
+		 },1000);
+</script>
+
